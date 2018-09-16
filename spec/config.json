@@ -1,0 +1,8 @@
+{
+    "workers": {
+        "test": "src/abc"
+    },
+    "channels": [
+        
+    ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "workertopology",
+  "version": "0.0.1",
+  "description": "Compose worker topologies",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tbd"
+  },
+  "keywords": [
+    "Worker",
+    "threads",
+    "compose",
+    "cooperate",
+    "messaging"
+  ],
+  "author": "Ayhan Alkan",
+  "license": "MIT",
+  "dependencies": {
+    "groupreducer": "^0.5.1"
+  }
+}
