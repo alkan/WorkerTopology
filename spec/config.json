@@ -2,7 +2,7 @@
     "workers": {
         "test": "src/abc"
     },
-    "channels": [
-        
-    ]
+    "channels": {
+        "tm": ["main", "test"]
+    }
 }
