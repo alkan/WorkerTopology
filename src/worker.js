@@ -24,6 +24,7 @@ const handler = {
     }
 }
 
+let ports = new Proxy.revocable({}, handler)
 parentPort.once('message', (value) => {
-
+    ports = value;
 });
