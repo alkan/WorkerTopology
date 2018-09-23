@@ -1,4 +1,4 @@
-const {parentChannel, MessagePort} = require('worker_threads');
+const {parentPort} = require('worker_threads');
 
 const PseudoPort = function() {
     this.events = {};
@@ -16,15 +16,25 @@ const PseudoPort = function() {
 }
 
 const handler = {
-    get(target, key, receiver) {
-        if (! target[key]) {
+    get(target, key) {
+        if (! target[key] && typeof key === 'string' && key !== 'inspect') {
             target[key] = new PseudoPort();
         }
         return target[key];
     }
 }
 
-let ports = new Proxy.revocable({}, handler)
-parentPort.once('message', (value) => {
-    ports = value;
-});
+const Ports = function() {
+    parentPort.once('message', (value) => {
+        Object.entries(value).forEach(([name, port]) => {
+            if (this[name]) {
+                this[name].transform(port);
+            }
+            this[name] = port;
+        });
+        this.synced = true;
+    });
+    this.synced = false;
+}
+
+module.exports.ports = new Proxy(new Ports(), handler);

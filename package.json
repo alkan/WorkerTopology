@@ -1,10 +1,10 @@
 {
   "name": "workertopology",
-  "version": "0.0.1",
+  "version": "0.4.0",
   "description": "Compose worker topologies",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "node --experimental-worker spec/test-runner.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "author": "Ayhan Alkan",
   "license": "MIT",
   "dependencies": {
-    "groupreducer": "^0.5.1"
+    "groupreducer": "^0.5.1",
+    "jasmine": "^3.2.0"
   }
 }

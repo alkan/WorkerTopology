@@ -1,8 +1,0 @@
-{
-    "workers": {
-        "test": "src/abc"
-    },
-    "channels": {
-        "tm": ["main", "test"]
-    }
-}
