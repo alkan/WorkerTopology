@@ -11,16 +11,16 @@
     "url": "tbd"
   },
   "keywords": [
-    "Worker",
-    "threads",
+    "Worker threads",
+    "Worker threads topology",
+    "separation of concerns",
     "compose",
     "cooperate",
     "messaging"
   ],
   "author": "Ayhan Alkan",
   "license": "MIT",
-  "dependencies": {
-    "groupreducer": "^0.5.1",
+  "devDependencies": {
     "jasmine": "^3.2.0"
   }
 }
