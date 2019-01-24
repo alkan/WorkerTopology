@@ -9,19 +9,18 @@ const Data = function(name) {
 const data = new Data(workerData.name);
 
 ports[workerData.source_port].on('message', (num) => {
-    if (num === 0) {
+    if (num.task === 'dump') {
         ports.reporter.postMessage(data);
         if (data.my_name === 'odd') {ports.prime.postMessage(num);}
-        return;
-    } else if (num === -1) {
+    } else if (num.task === 'status') {
         ports.main.postMessage(data);
         if (data.my_name === 'odd') {ports.prime.postMessage(num);}
-        return;
-    }
-    data.count += 1;
-    data.sum += num;
-    if (data.my_name === 'odd' && isprime(num)) {
-        ports.prime.postMessage(num);
+    } else {
+        data.count += 1;
+        data.sum += num.val;
+        if (data.my_name === 'odd' && isprime(num.val)) {
+            ports.prime.postMessage(num);
+        }
     }
 })
 
