@@ -20,6 +20,7 @@ npm install workertopology
 
 ## How to Use
 
+Either in main or worker sources you will require `'workertopology'` module.  If you need additional worker threads functionality, you would require `'worker_threads'` module, too.
 
 ## API
 
