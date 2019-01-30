@@ -63,6 +63,3 @@ describe('Accumulator', () => {
 
     });
 });
-
-
-//setTimeout(() => {}, 900);

@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "10"
+  - "11"
+sudo: false
+script:
+  - npm test
+before_install:
+  - "npm i -g jasmine"
+env:
+  - TEST=true
+matrix:
+  fast_finish: true
+  include:
+    - node_js: "node"
+      env: PRETEST=true
+    - node_js: "node"
+      env: COVERAGE=true
