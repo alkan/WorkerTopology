@@ -68,27 +68,8 @@ This simple sample depicts all API components of the library, indeed.  I hope it
 
 Depending on the role of requiring source file (main rr worker), you will get different functionality as described below.
 
-### Ma```javascript
- Threadconst topologydef = {
-     "workers": {
-         "test": {path: "./spec/simple-worker.js", options: {stdout: false}}
-     },
-     "channels": [
-         ["main", "test"]
-     ]
- }
-```
+### Main Thread
 
-```javascript
-const worker_topolopy = require('workertopology');
-let topology = worker_topolopy(topologydef);
-topology.ports.test.postMessage('Hello worker');
-topology.ports.test.on('message', (msg) => {
-    console.log('Reply from worker: ', msg);
-    //topology.workers.test.terminate();
-    done();
-});
-```
 
 ### Worker Threads
 
