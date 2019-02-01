@@ -1,0 +1,8 @@
+digraph acc {
+//    bgcolor = transparent;
+    size = 4;
+    main -> {even odd} [dir=both];
+    main -> prime [dir=back];
+    odd -> prime [constraint=false];
+    {even odd prime} -> reporter;
+}
