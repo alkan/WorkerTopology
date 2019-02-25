@@ -1,4 +1,4 @@
-# Worker Topology &nbsp;&nbsp;&nbsp; ![Travis](https://travis-ci.org/alkan/WorkerTopology.svg?branch=master)
+# Worker Topology &nbsp;&nbsp;&nbsp; [![Build Status](https://travis-ci.org/alkan/WorkerTopology.svg?branch=master)](https://travis-ci.org/alkan/WorkerTopology)
 
 Node.js Worker Threads library is great. It is, however, a bit tricky to develop cleanly separated worker codes and build a sophisticated worker topology.  This library is developed to get rid of such difficulties.
 
@@ -60,7 +60,7 @@ This simple sample depicts all API components of the library, indeed.  I hope th
 
 No matter how complex your topology is.  Let us try to realize this idea with the accumulator sample.
 
-The main thread generates random integer numbers.  If the number is an even, it posts the number to `even` worker, otherwise posts it to `odd` worker.  If the number is a prime, `odd` worker posts it to `prime` worker.
+The main thread generates random integer numbers (greater than 2).  If the number is an even, it posts the number to `even` worker, otherwise posts it to `odd` worker.  If the number is a prime, `odd` worker posts it to `prime` worker.
 
 The main thread posts `'dump'` command periodically and `status` command at the end to both `even` and `odd` workers.   `odd` worker forwards all commands to `prime` worker as well.  On `dump` command, accumulators post their data to `reporter` worker to print them on console.  And on `status` command the accumulators post their data to the main thread.
 
@@ -115,7 +115,8 @@ The `'channels'` object is an array.  Each element should be a two element array
 
 ### Worker Threads
 
-In worker threads `require('workertopology')` statement returns a named object &mdash; `ports`.  Each one contains only ports to related pairs.
+In workerconst rnd = (upper_bound) =>  Math.ceil(Math.random() * upper_bound);
+ threads `require('workertopology')` statement returns a named object &mdash; `ports`.  Each one contains only ports to related pairs.
 
 ## Internals
 

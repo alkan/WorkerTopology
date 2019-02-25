@@ -1,6 +1,6 @@
 {
   "name": "workertopology",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Create declarative Node.js Worker Threads topologies easily",
   "main": "index.js",
   "scripts": {

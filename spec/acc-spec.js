@@ -21,7 +21,8 @@ const tdefs = {
     ]
 }
 
-const rnd = (upper_bound) =>  Math.ceil(Math.random() * upper_bound);
+// Generate a random integer between 3 and upper_bound
+const rnd = (upper_bound) =>  Math.ceil(Math.random() * (upper_bound-2) + 2;
 
 function wait_status(topology, done) {
     const waitfor = (port) =>
