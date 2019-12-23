@@ -6,6 +6,9 @@ const PseudoPort = function() {
     this.on = function(event, cb) {
         this.events[event] = cb;
     }
+    this.once = function(event, cb) {
+        this.events[event] = cb;
+    }
     this.postMessage = function(value, transferList) {
         this.deliveries.push([value, transferList]);
     }
